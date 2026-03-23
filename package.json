@@ -1,0 +1,14 @@
+{
+  "name": "monorepo-template-v2",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Monorepo Template V2",
+  "author": "dfx_17",
+  "license": "MIT",
+  "packageManager": "pnpm@10.32.1",
+  "scripts": {
+    "b": "pnpm --filter backend",
+    "f": "pnpm --filter frontend"
+  },
+  "keywords": []
+}
