@@ -7,7 +7,7 @@ import baseConfig from "../eslint.base.mjs";
 
 export default defineConfig([
   {
-    ignores: ["dist/", "node_modules/", "build/"],
+    ignores: ["dist/", "node_modules/", "build/", "./src/api"],
   },
     ...baseConfig,
   {
