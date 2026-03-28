@@ -8,7 +8,6 @@
   "packageManager": "pnpm@10.32.1",
   "scripts": {
     "build": "nest build",
-    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
@@ -22,12 +21,14 @@
     "prepare": "ts-patch install"
   },
   "dependencies": {
+    "@fastify/cors": "^11.2.0",
     "@fastify/static": "^9.0.0",
     "@nestia/core": "^11.0.1",
     "@nestia/e2e": "^11.0.1",
     "@nestia/fetcher": "^11.0.1",
     "@nestia/sdk": "^11.0.1",
     "@nestjs/common": "^11.0.1",
+    "@nestjs/config": "^4.0.3",
     "@nestjs/core": "^11.0.1",
     "@nestjs/platform-fastify": "^11.1.17",
     "@nestjs/swagger": "^11.2.6",

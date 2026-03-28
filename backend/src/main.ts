@@ -1,4 +1,5 @@
 import { AppModule } from "./app.module";
+import cors from "@fastify/cors";
 import { INestiaConfig, NestiaSwaggerComposer } from "@nestia/sdk";
 import { Logger } from "@nestjs/common";
 import { NestFactory } from "@nestjs/core";
@@ -34,6 +35,8 @@ async function bootstrap() {
   
   const document = await NestiaSwaggerComposer.document(app, config);
   SwaggerModule.setup("docs", app, document as OpenAPIObject);
+
+  await app.register(cors);
 
   await app.listen(3000, "0.0.0.0");
 }
