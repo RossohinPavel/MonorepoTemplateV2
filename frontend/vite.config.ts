@@ -20,6 +20,7 @@ const getPlugins = (mode: string) => {
 export default defineConfig(({mode}) => {
   return {
     plugins: getPlugins(mode),
+    envDir: "../",
     build: {
       emptyOutDir: true,
       rollupOptions: {
