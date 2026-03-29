@@ -1,11 +1,16 @@
 import { useState } from "react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { PingBackendButton } from "./components/PingBackendButton";
+
+
+const queryClient = new QueryClient();
 
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       <section id="center">
         <div className="hero"></div>
         <div>
@@ -20,6 +25,7 @@ function App() {
         >
           Count is {count}
         </button>
+        <PingBackendButton />
       </section>
 
       <div className="ticks"></div>
@@ -107,7 +113,7 @@ function App() {
 
       <div className="ticks"></div>
       <section id="spacer"></section>
-    </>
+    </QueryClientProvider>
   );
 }
 

@@ -3,7 +3,6 @@ import typia, { tags } from "typia";
 
 
 export type ConfigType = Readonly<{
-  backendPort: number
   someSecret: string & tags.MinLength<1>
 }>;
 
@@ -12,11 +11,10 @@ export type ConfigType = Readonly<{
  */
 export const getConfig = () => {
   // Манипуляции для извлечения значений из корневого .env в режиме разработки.
-  if (process.env.BACKEND_PORT === undefined) {
+  if (process.env.SOME_SECRET === undefined) {
     loadEnvFile("../.env");
   } 
   const config: ConfigType = {
-    backendPort: Number(process.env.BACKEND_PORT) || 0,
     someSecret: process.env.SOME_SECRET!,
   };
   return typia.assert<ConfigType>(config);
